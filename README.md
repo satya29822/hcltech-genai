@@ -42,7 +42,7 @@ flowchart LR
 ```
 
 1. **Intake** validates the claim schema, normalises categories, and reads quantities such as "2 nights" from the descriptions.
-2. **The LLM agent** decides which tools to call, often several in parallel, and grounds its reasoning with `search_policy`.
+2. **The LLM agent** decides which tools to call and grounds its reasoning with `search_policy`. Tool calls are processed in order and their results are returned to the model.
 3. **The tools** are deterministic. They do all the arithmetic and apply the hard rules, and they return facts, flags and the rules they applied.
 4. **`submit_decision`** is validated. Invalid rule ids, skipped checks, ignored flags and invented dollar figures are sent back to the LLM so it can correct itself.
 5. **The guardrail** recomputes the decision from the policy. The LLM may **escalate** to manual review, but it can never downgrade one.
@@ -222,8 +222,3 @@ See [`docs/TECHNICAL_DOCUMENTATION.md`](docs/TECHNICAL_DOCUMENTATION.md) for the
 ---
 
 *Mock policy and claims only; no real employee or company data.*
-#   h c l t e c h - g e n a i 
- 
- #   h c l t e c h - g e n a i 
- 
- 

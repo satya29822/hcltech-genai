@@ -72,8 +72,10 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate    macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 
-cp .env.example .env          # Windows: copy .env.example .env
-# then put your free Groq key in .env: GROQ_API_KEY=gsk_...
+# Create a local .env file in this folder with:
+# LLM_PROVIDER=groq
+# GROQ_API_KEY=gsk_...
+# AGENT_MODE=auto
 
 jupyter notebook satyanarayansharma.ipynb
 # Kernel → Restart & Run All
@@ -81,6 +83,8 @@ jupyter notebook satyanarayansharma.ipynb
 
 - **No key?** The notebook runs in deterministic `rules` mode and produces the same decisions without any LLM.
 - **With a key,** the LLM drives tool selection and writes the explanations. Each result shows its source, e.g. `llm:llama-3.3-70b-versatile`.
+
+The notebook loads `.env` from the project folder with `python-dotenv`. Keep this file local and never commit it. If the key was added after the notebook kernel started, restart the kernel and use **Run All** so the configuration cell reloads the environment variables.
 
 ### Configuration
 
@@ -161,7 +165,7 @@ audit.frame()                  # full audit trail as a DataFrame
 ├── README.md                         # this file
 ├── docs/TECHNICAL_DOCUMENTATION.md   # architecture, tool reference, decision logic
 ├── requirements.txt
-├── .env.example                      # copy to .env; never commit .env
+├── .env                               # local API keys; never commit this file
 └── .gitignore
 ```
 
@@ -218,6 +222,8 @@ See [`docs/TECHNICAL_DOCUMENTATION.md`](docs/TECHNICAL_DOCUMENTATION.md) for the
 ---
 
 *Mock policy and claims only; no real employee or company data.*
-#   h c l t e c h - g e n a i  
- #   h c l t e c h - g e n a i  
+#   h c l t e c h - g e n a i 
+ 
+ #   h c l t e c h - g e n a i 
+ 
  

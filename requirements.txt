@@ -1,0 +1,9 @@
+# Core (rules mode)
+pandas>=2.0
+matplotlib>=3.7
+# LLM mode (any OpenAI-compatible provider: Groq, Gemini, Ollama, OpenAI)
+openai>=1.40
+# Notebook UI and config
+jupyter
+ipywidgets>=8.0
+python-dotenv>=1.0
